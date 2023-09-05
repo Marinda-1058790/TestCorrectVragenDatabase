@@ -1,0 +1,12 @@
+{% extends "base.html" %} {% block content %}
+<div class="screen-menu">
+  <div class="container-homepage-btns">
+    <a href="{{ url_for("leerdoelen") }}"><button class="homepage-btns">Leerdoelen</button></a>
+    <a href="{{ url_for("htmlcodes") }}"><button class="homepage-btns">Systeemcodes</button></a>
+    <a href="{{ url_for("auteurs") }}"><button class="homepage-btns">Auteurs</button></a>
+    <a href="{{ url_for("auteurs_select") }}"><button class="homepage-btns">Zoek een auteur</button></a>
+    <a href="{{ url_for("auteursdata") }}"><button class="homepage-btns">Auteur gegevens</button></a>
+    <a href="{{ url_for("uitzondering") }}"><button class="homepage-btns">Uitzonderingen</button></a>
+  </div>
+</div>
+{% endblock %}

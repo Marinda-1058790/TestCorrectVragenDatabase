@@ -1,0 +1,31 @@
+{% extends "base.html" %} {% block content %}
+<table class="data-table">
+    <tr>
+      <th>Auteur</th>
+      <th>ID</th>
+      <th>Geboortejaar</th>
+      <th>Medewerker</th>
+      <th>Met Pensioen</th>
+    </tr>
+    {% for auteur in auteurs%}
+    <tr>
+      <td class="auteur"> {{auteur["voornaam"]}} {{auteur["achternaam"]}}</td>
+      <td class="id">{{ auteur["id"] }}</td>
+      <td class="geboortejaar"> {{ auteur["geboortejaar"] }}</td>
+      <td class="medewerker"> {{ auteur["medewerker"] }}
+        <form action="/medewerker_opslaan/{{ auteur.id }}" method="POST">
+            <select name="medewerker" id="auteur">
+              <option  value="0">  niet in dienst  </option>
+              <option  value="1"> in dienst</option>
+            </select>
+            <input type="submit" name="btn btn-primary" value="Opslaan"/>
+          </form>
+        </td>
+      <td class="pensioen">{% if auteur ["met pensioen"] == 1%} Met Pensioen {% endif %} 
+        {% if auteur ["met pensioen"] == 0%} Niet met Pensioen {% endif %} 
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% endblock %}
+  

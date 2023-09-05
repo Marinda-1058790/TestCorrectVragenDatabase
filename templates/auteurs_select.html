@@ -1,0 +1,36 @@
+{% extends "base.html" %} {% block content %}
+<head>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<div class="leerdoel-background"> 
+<table class="data-table">
+    <tr>
+      <th>ID</th>
+      <th>Vraag</th>
+      <th>Auteur</th>
+    </tr>
+    {% for vraag in vragen%}
+    <tr>
+      <td class="id">{{ vraag["id"] }}</td>
+      <td>{{ vraag["vraag"] }}</td>
+      <td class="auteurID">{{ vraag["auteur"] }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+<div class="container_auteurIDsearch">
+    <div class="auteur_IDsearch">
+        <form action="/auteurs_selectresults" method="POST">
+            <label for="auteurs">Zoek een auteur</label>           
+            <select name="auteurs" id="auteurs">
+              {% for auteur in auteurs %}
+                <option value="{{ auteur[ "id" ] }}">
+                  {{ auteur[ "voornaam" ] }} {{ auteur["achternaam"] }}
+            </option>
+            {% endfor %}
+        </select>
+        <button type="submit">Zoek</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

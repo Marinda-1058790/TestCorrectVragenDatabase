@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vragenhospitaal</title>
+    <link rel="stylesheet" href="../static/styles.css" />
+  </head>
+  <body>
+    <section class="loginpage">
+      <video
+        class="background-video"
+        src="https://26318898.fs1.hubspotusercontent-eu1.net/hubfs/26318898/Homepagina%20vid-2.mp4"
+        loop
+        muted
+        autoplay
+      ></video>
+      <div class="background-overlay"></div>
+      <div class="container-login">
+        <div class="logincard-header">
+          <img
+            class="login-logo"
+            src="../static/images/TClogo.png"
+            alt="Test-Correct"
+          />
+        </div>
+        <form action="/login" method="POST">
+          <div class="login-field">
+            <input
+              class="login-input"
+              type="text"
+              name="username"
+              required
+              placeholder="Gebruikersnaam"
+            />
+            <input
+              class="login-input"
+              type="password"
+              name="password"
+              required
+              placeholder="Wachtwoord"
+            />
+            <input class="login-button" type="submit" value="Log in" />
+          </div>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>

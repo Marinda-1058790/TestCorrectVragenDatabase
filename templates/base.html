@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Vragenhospitaal</title>
+      <link rel="stylesheet" href="../static/styles.css" />
+    </head>
+    <body>
+      <nav class="navbar-container">
+        <div class="nav-inner">
+          <div class="nav-left">
+            <a href="{{ url_for("homepage") }}">
+              <img
+              class="nav-logo"
+              src="../static/images/TClogo.png"
+              alt="Test-Correct"
+              />
+            </a>
+          </div>
+          <div class="nav-middle">
+            <a href="{{ url_for("leerdoelen") }}"><button class="navbar-btns">Leerdoelen</button></a>
+            <a href="{{ url_for("htmlcodes") }}"><button class="navbar-btns">Systeemcodes</button></a>
+            <a href="{{ url_for("auteurs") }}"><button class="navbar-btns">Auteurs</button></a>
+            <a href="{{url_for("auteurs_select") }}"><button class="navbar-btns">Zoek een auteur</button></a>
+            <a href="{{url_for("auteursdata") }}"><button class="navbar-btns">Auteur gegevens</button></a>
+            <a href="{{ url_for("uitzondering") }}"><button class="navbar-btns">Uitzonderingen</button></a>
+          </div>
+          <div class="nav-right">
+            <!-- <button class="loguit-btn" type="button">Log uit</button> -->
+          </div>
+        </div>
+      </nav>
+    <div class="background">
+      {% block content %} {% endblock %}
+    </div>
+    </body>
+</html>

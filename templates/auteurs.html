@@ -1,0 +1,34 @@
+{% extends "base.html" %} {% block content %}
+<table class="data-table">
+  <tr>
+    <th>Auteur</th>
+    <th>ID</th>
+    <th>Vraag</th>
+    <th>Uitzondering</th>
+  </tr>
+  {% for vraag in vragen%}
+  <tr>
+    <td class="auteur">
+      <form action="/auteur_opslaan/{{ vraag.id }}" method="POST">
+        <select name="auteur" id="auteur">
+          <option value="0">Maak een keuze</option>
+          {% for auteur in auteurs %}
+          <option value="1">
+            {{ auteur[ "voornaam" ] }} {{ auteur["achternaam"] }}
+          </option>
+          {% endfor %}
+        </select>
+        <input type="submit" name="btn btn-primary" value="Opslaan" />
+      </form>
+    </td>
+    <td class="id">{{ vraag["id"] }}</td>
+    <td>{{ vraag["vraag"] }}</td>
+    <td>
+      <form action="/uitzondering_leerdoel/{{ vraag.id }}" method="POST">
+        <input type="submit" value="Uitzondering" />
+      </form>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

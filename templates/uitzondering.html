@@ -1,0 +1,34 @@
+{% extends "base.html" %} {% block content %}
+<div class="data-table-uitzonderingen">
+  <table class="data-table">
+    <tr>
+      <th>Leerdoel</th>
+      <th>Auteur</th>
+      <th>ID</th>
+      <th>Vraag</th>
+      <th>Terugzetten</th>
+    </tr>
+    {% for vraag in uitzondering%}
+    <tr>
+      <td class="leerdoel">
+        {% if vraag["leerdoel"] > leerdoelen | length %} Onbekend {% else %} {%
+        for leerdoel in leerdoelen[vraag["leerdoel"] -1] %} {{ leerdoel }} {%
+        endfor%} {% endif %}
+      </td>
+      <td class="auteur">
+        {% if vraag["auteur"] > auteurs | length %} Onbekend {% else %} {% for
+        auteur in auteurs[vraag["auteur"] -1] %} {{ auteur }} {% endfor%} {%
+        endif %}
+      </td>
+      <td class="id">{{ vraag["id"] }}</td>
+      <td>{{ vraag["vraag"] }}</td>
+      <td>
+        <form action="/uitzondering_terugzetten/{{ vraag.id }}" method="POST">
+          <input type="submit" value="Terugzetten" />
+        </form>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+{% endblock %}

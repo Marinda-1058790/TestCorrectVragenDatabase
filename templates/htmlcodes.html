@@ -1,0 +1,23 @@
+{% extends "base.html" %} {% block content %}
+
+    <table class="data-table">
+      <tr>
+        <th>ID</th>
+        <th>Vraag </th>
+      </tr>
+      {% for vraag in foutcodes%}
+      <tr>
+        <td class="id">{{ vraag["id"] }}</td>
+        <td class="vraag">
+            <form action="/vraag_opslaan/{{ vraag.id }}" method="POST">
+                <textarea class="textarea-html" name="vraag" > {{ vraag['vraag'] }} </textarea>
+                <input type="submit" name="btn btn-primary" value="Opslaan" />
+              </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+
+    {% endblock %}
+
+

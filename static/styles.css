@@ -1,0 +1,335 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid red; */
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 16px;
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.33;
+}
+
+
+/* Navbar style */
+
+.navbar-container {
+    background: white;
+    box-shadow: 0 3px 8px 0 rgba(4, 31, 116, 0.3);
+    min-height: 70px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.nav-inner {
+    display: flex;
+    align-items: center;
+    min-height: 70px;
+    box-sizing: border-box;
+}
+
+.nav-left {
+    margin-left: 0;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.nav-logo {
+    border-style: none;
+    height: auto;
+    max-width: 180px;
+    box-sizing: border-box;
+    margin-left: 50px;
+}
+
+.nav-middle {
+    display: flex;
+    gap: 20px;
+    margin-left: 50px;
+}
+
+.navbar-btns {
+    background: #3dbb56;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    box-shadow: 0 3px 6px 0 rgba(4, 31, 116, .3);
+    padding: 0 17px 0 17px;
+    border: 0;
+    border-radius: 10px;
+    min-height: 40px;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+
+.loguit-btn {
+    background: #004df5;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    box-shadow: 0 3px 6px 0 rgba(4, 31, 116, .3);
+    padding: 0 17px 0 17px;
+    border: 0;
+    border-radius: 10px;
+    min-height: 40px;
+    margin-right: 70px;
+}
+
+
+/* Table style */
+
+table,
+tr,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+}
+
+.data-table {
+    margin: 90px 20px 90px 20px;
+}
+
+.leerdoel {
+    text-align: center;
+}
+
+.auteur {
+    text-align: center;
+}
+
+.auteur_IDsearch {
+    text-align: center;
+}
+
+.id {
+    text-align: center;
+}
+
+.data-table-uitzonderingen{
+    max-height: 700px;
+    overflow: scroll;
+}
+
+/* Page styling */
+
+.background {
+    background-image: url("../static/images/BackgroundTriangels.png");
+    background-size: cover;
+    height: 650px;
+}
+
+.textarea-html {
+    width: 100%;
+    font-family: sans-serif;
+}
+
+.vraag {
+    width: 100%;
+}
+
+.medewerker {
+    width: 600px;
+}
+
+.pensioen {
+    width: 600px;
+}
+
+
+/* Homepage styling */
+
+.screen-menu {
+    width: 100vw;
+    height: 91vh;
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-homepage-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 250px;
+}
+
+.homepage-btns {
+    background: #3dbb56;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    box-shadow: 0 3px 6px 0 rgba(4, 31, 116, .3);
+    padding: 0 17px 0 17px;
+    border: 0;
+    border-radius: 10px;
+    min-height: 40px;
+    cursor: pointer;
+    width: 200px;
+}
+
+
+/* Loginpage styling */
+
+.loginpage {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.background-video {
+    height: 100%;
+    width: 100%;
+    left: 0;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+.background-overlay {
+    background-image: linear-gradient(to right, #004df5 0%, #4781ff 100%);
+    height: 100%;
+    width: 100%;
+    opacity: 0.7;
+    z-index: -1;
+    position: absolute;
+}
+
+.container-login {
+    width: 400px;
+    height: 300px;
+    z-index: 0;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.logincard-header {
+    height: 75px;
+    background: linear-gradient(-135deg, #68ff95, #304cd6);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-field {
+    margin-top: 60px;
+    height: 100px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-input {
+    padding: 10px;
+    border: 1px solid rgb(189, 189, 189);
+    border-radius: 10px;
+    width: 250px;
+}
+
+.login-button {
+    padding: 7px;
+    border-radius: 10px;
+    width: 250px;
+    background: linear-gradient(-135deg, #68ff95, #304cd6);
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* Style the navigation bar */
+.auteur_IDsearch {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgb(255, 255, 255), rgb(240, 240, 240), rgb(141, 141, 141))
+}
+
+/* Style the form elements within the navigation bar */
+.auteur_IDsearch form {
+    display: flex;
+    align-items: center;
+}
+
+/* Style the label and dropdown menu */
+.auteur_IDsearch label {
+    color: white;
+    font-size: 16px;
+    background: linear-gradient(-135deg, #68ff95, #304cd6);
+    padding: 10px;
+    border: 3px;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+/* Style the submit button */
+.auteur_IDsearch button {
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    background: linear-gradient(-135deg, #304cd6, #68ff95);
+    border: 3px;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer
+}
+
+.auteur_IDsearch button:hover {
+    font-size: 18px;
+    padding: 12px 22px;
+    border-width: 2px;
+}
+
+/* Style the options within the dropdown menu */
+.auteur_IDsearch option {
+    color: #333;
+    /* Change the text color to black */
+}
+
+/* Style the dropdown menu */
+.auteur_IDsearch select {
+    color: #333;
+    padding: 10px;
+    border: 3px;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+/* Style the dropdown menu */
+.auteur_IDsearch select:hover {
+    color: #333;
+    padding: 12px;
+    border: 5px;
+    border-radius: 7px;
+    margin: 12px;
+}

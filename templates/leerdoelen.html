@@ -1,0 +1,34 @@
+{% extends "base.html" %} {% block content %}
+<table class="data-table">
+  <tr>
+    <th>Leerdoel</th>
+    <th>ID</th>
+    <th>Vraag</th>
+    <th>Uitzondering</th>
+  </tr>
+  {% for vraag in vragen%}
+  <tr>
+    <td class="leerdoel">
+      <form action="/leerdoel_opslaan/{{ vraag.id }}" method="POST">
+        <select name="leerdoel" id="leerdoel">
+          <option value="0">Maak een keuze</option>
+          {% for leerdoel in leerdoelen %}
+          <option value="{{ leerdoel['id'] }}">
+            {{ leerdoel[ "leerdoel" ] }}
+          </option>
+          {% endfor %}
+        </select>
+        <input type="submit" name="btn btn-primary" value="Opslaan" />
+      </form>
+    </td>
+    <td class="id">{{ vraag["id"] }}</td>
+    <td>{{ vraag["vraag"] }}</td>
+    <td>
+      <form action="/uitzondering_leerdoel/{{ vraag.id }}" method="POST">
+        <input type="submit" value="Uitzondering" />
+      </form>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}
