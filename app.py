@@ -2,7 +2,7 @@ import os.path
 import sys
 import sqlite3
 
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, session
 
 from lib.tablemodel import DatabaseModel
 from lib.demodatabase import create_demo_database
@@ -18,6 +18,7 @@ FLASK_DEBUG = True
 app = Flask(__name__)
 # This command creates the "<application directory>/databases/testcorrect_vragen.db" path
 DATABASE_FILE = os.path.join(app.root_path, "databases", "testcorrect_vragen.db")
+app.secret_key = 'ThisKeyIsSuperSecret'
 
 # Check if the database file exists. If not, create a demo database
 if not os.path.isfile(DATABASE_FILE):
@@ -44,6 +45,12 @@ def table_content(table_name=None):
         return render_template(
             "table_details.html", rows=rows, columns=column_names, table_name=table_name
         )
+
+@app.before_request
+def check_login():
+    if request.endpoint not in ["static", "loginpage", "login"]:
+        if not session.get("logged_in"):
+            return redirect(url_for("loginpage"))
 
 
 @app.route("/")
@@ -135,10 +142,12 @@ def index():
 def login():
     username = request.form["username"]
     password = request.form["password"]
+    session["logged_in"] = False
 
     authenticated = (username == "test_username", password == "test_password")
 
     if authenticated:
+        session["logged_in"] = True
         return redirect(url_for("homepage"))
 
     else:
